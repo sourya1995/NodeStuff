@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
+const rootDir = require('../util/path');
 
 router.use('/add-product',(req, res, next) => {
     console.log('inside another middleware');
-    res.send('<form action="/add-product" method="POST"><input type="text" name="title"><button type="submit">Add Product</button></form>');
-
+    res.sendFile(path.join(rootDir, 'views', 'add-product.html'));
 });
 
 router.post('/add-product', (req, res) => {
