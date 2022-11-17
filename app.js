@@ -19,11 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
-db.execute('SELECT * FROM products').then( result => {
-    console.log(result[0], result[1]);
-}).catch( err => {
-    console.log(err);
-});
+
 
 
 app.use(errorController.get404);
