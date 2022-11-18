@@ -1,33 +1,26 @@
 {
-  "name": "nodejs",
+  "name": "nodejs-complete-guide",
   "version": "1.0.0",
-  "description": "",
+  "description": "Complete Node.js Guide",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sourya1995/NodeStuff.git"
-  },
-  "author": "",
+  "author": "Sourya",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sourya1995/NodeStuff/issues"
-  },
-  "homepage": "https://github.com/sourya1995/NodeStuff#readme",
   "devDependencies": {
     "nodemon": "^2.0.20"
   },
   "dependencies": {
-    "body-parser": "^1.20.1",
+    "body-parser": "^1.18.3",
     "ejs": "^3.1.8",
-    "express": "^4.18.2",
+    "express": "^4.16.3",
     "express-handlebars": "^6.0.6",
-    "handlebars": "3.0",
-    "mysql2": "^2.3.3",
+    "mongodb": "^3.1.6",
+    "mysql2": "^1.6.1",
     "pug": "^3.0.2",
-    "sequelize": "^6.25.6"
+    "sequelize": "^5.0.0-beta.11"
   }
 }
