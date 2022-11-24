@@ -10,9 +10,10 @@ const flash = require('connect-flash');
 const multer = require('multer');
 const errorController = require('./controllers/error');
 const User = require('./models/user');
+const { clearImage } = require('./util/file');
 
 const MONGODB_URI =
-  'mongodb+srv://sourya:tCCF!wSTt9-rY7H@cluster0.gf2zckt.mongodb.net/shop';
+  `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.gf2zckt.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}`;
 
 const app = express();
 const store = new MongoDBStore({
@@ -98,7 +99,7 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true})
   .then(result => {
-      app.listen(3000);
+      app.listen(process.env.PORT || 3000);
   })
   .catch(err => {
     console.log(err);
